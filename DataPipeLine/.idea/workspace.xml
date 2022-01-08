@@ -37,11 +37,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../big-data-masters-program" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
@@ -52,6 +56,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.datapipeline.GetMetaInformation" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.datapipeline.MySqlConnector" />
+      <module name="DataPipeLine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.datapipeline.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -80,6 +97,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.DataPipeLineMain" />
+        <item itemvalue="Application.MySqlConnector" />
         <item itemvalue="TestNG.EpochTimeConverterTest.testGetEpochTime" />
       </list>
     </recent_temporary>
@@ -212,14 +230,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/datapipeline/DataPipeLineMain.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/datapipeline/GetSetMetaData.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/datapipeline/DataPipeLineMain.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/datapipeline/CreateInsertPartition.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

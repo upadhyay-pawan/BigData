@@ -7,7 +7,7 @@ public class GetMetaInformation {
     public static String getMinMaxFromTbl() throws SQLException {
         String metaInfo = null;
         String minQuery = "select min(epoch_time),max(epoch_time) from stockdb.ext_stocks";
-        ResultSet rs = QueryExecutor.executeQuery(minQuery, "Yes");
+        ResultSet rs = QueryExecutor.executeQuery(minQuery, "Yes","Hive");
         int columns = rs
                 .getMetaData()
                 .getColumnCount();
@@ -27,7 +27,7 @@ public class GetMetaInformation {
 
     public static long getMetaInfoFromPart(long partitionEpochTime) throws SQLException {
         String getQuery = "select epoch_time from stockdb.ext_stocks  where record_id=(select max(cast(record_id as int)) from stockdb.us_stocks  where epoch_time='" + partitionEpochTime + "')";
-        ResultSet rs = QueryExecutor.executeQuery(getQuery, "Yes");
+        ResultSet rs = QueryExecutor.executeQuery(getQuery, "Yes","Hive");
         if (rs.next()) {
             int columns = rs
                     .getMetaData()
@@ -39,13 +39,14 @@ public class GetMetaInformation {
             long metaInfo = partitionLastRecordTime;
             return metaInfo;
         } else {
+            System.out.println("no more records to add in this partition");
             return 0;
         }
     }
 
     public static long getNextStartTimeFromTbl(long lastEpochTime) throws SQLException {
         String nextRecQuery = "select epoch_time from stockdb.ext_stocks where epoch_time>" + lastEpochTime + " limit 1";
-        ResultSet rs = QueryExecutor.executeQuery(nextRecQuery, "Yes");
+        ResultSet rs = QueryExecutor.executeQuery(nextRecQuery, "Yes","Hive");
         int columns = rs
                 .getMetaData()
                 .getColumnCount();
